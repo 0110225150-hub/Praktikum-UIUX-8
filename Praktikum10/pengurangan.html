@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Pengurangan</title>
+    <script>
+        function makepink(element) {
+            element.style.backgroundColor = "pink";
+        }
+
+        function kurangi() {
+            // PERBAIKAN 1: Menambahkan tanda kutip " " pada ID
+            let input1 = document.getElementById("bil1").value;
+            console.log("Bilangan 1: " + input1);
+            
+            let input2 = document.getElementById("bil2").value;
+            console.log("Bilangan 2: " + input2);
+            
+            // PERBAIKAN 2: Mengganti tanda = menjadi - (kurang)
+            // Validasi sederhana: jika kosong dianggap 0
+            let angka1 = parseFloat(input1) || 0;
+            let angka2 = parseFloat(input2) || 0;
+            
+            let hasil = angka1 - angka2;
+            
+            let area_hasil = document.getElementById("hasil");
+            area_hasil.innerHTML = hasil; 
+        }
+    </script>
+</head> 
+<body style="background-color: beige;">
+    <h3>Kalkulator Pengurangan Sederhana</h3>
+    <div id="kotak1" style="padding: 20px; border: 1px solid black;">
+        Bilangan 1 : <input type="number" id="bil1" value="0">
+        <br>
+        Bilangan 2 : <input type="number" id="bil2" value="0">
+        <br>
+        Hasil : <span id="hasil" style="font-weight: bold; font-size: 1.2em;">0</span>
+        <br>
+        <button onclick="kurangi()">Hitung</button>
+    </div>
+</body>
+</html>

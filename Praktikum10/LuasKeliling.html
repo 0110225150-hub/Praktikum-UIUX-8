@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Lingkaran</title>
+
+    <script>
+        function hitungLingkaran() {
+            // 1. Ambil nilai dari input ID "jariJari"
+            // Jangan lupa pakai tanda kutip "" di dalam getElementById
+            let input = document.getElementById("jariJari").value;
+            
+            // 2. Ubah string menjadi angka desimal (float)
+            let r = parseFloat(input);
+
+            // 3. Validasi: Pastikan r adalah angka dan tidak negatif
+            if (isNaN(r) || r <= 0) {
+                alert("Harap masukkan jari-jari yang valid (angka positif)!");
+                return;
+            }
+
+            // 4. Rumus Matematika
+            // Math.PI adalah 3.14159...
+            let luas = Math.PI * (r * r);       // Rumus: π x r²
+            let keliling = 2 * Math.PI * r;     // Rumus: 2 x π x r
+
+            // 5. Tampilkan hasil ke HTML
+            // .toFixed(2) membatasi angka menjadi 2 digit di belakang koma
+            document.getElementById("outputLuas").innerHTML = luas.toFixed(2);
+            document.getElementById("outputKeliling").innerHTML = keliling.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h3>Hitung Lingkaran</h3>
+        
+        <label for="jariJari">Masukkan Jari-jari (r):</label>
+        <br>
+        <input type="number" id="jariJari" placeholder="Contoh: 7 atau 10">
+        <br>
+        
+        <button onclick="hitungLingkaran()">Hitung Sekarang</button>
+
+        <div class="hasil-box">
+            <p><strong>Luas:</strong> <span id="outputLuas">0</span></p>
+            <p><strong>Keliling:</strong> <span id="outputKeliling">0</span></p>
+        </div>
+    </div>
+
+</body>
+</html>
