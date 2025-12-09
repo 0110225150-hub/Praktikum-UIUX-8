@@ -7,26 +7,18 @@
 
     <script>
         function hitungLingkaran() {
-            // 1. Ambil nilai dari input ID "jariJari"
-            // Jangan lupa pakai tanda kutip "" di dalam getElementById
             let input = document.getElementById("jariJari").value;
             
-            // 2. Ubah string menjadi angka desimal (float)
             let r = parseFloat(input);
-
-            // 3. Validasi: Pastikan r adalah angka dan tidak negatif
+            
             if (isNaN(r) || r <= 0) {
                 alert("Harap masukkan jari-jari yang valid (angka positif)!");
                 return;
             }
 
-            // 4. Rumus Matematika
-            // Math.PI adalah 3.14159...
             let luas = Math.PI * (r * r);       // Rumus: π x r²
             let keliling = 2 * Math.PI * r;     // Rumus: 2 x π x r
 
-            // 5. Tampilkan hasil ke HTML
-            // .toFixed(2) membatasi angka menjadi 2 digit di belakang koma
             document.getElementById("outputLuas").innerHTML = luas.toFixed(2);
             document.getElementById("outputKeliling").innerHTML = keliling.toFixed(2);
         }
@@ -51,4 +43,5 @@
     </div>
 
 </body>
+
 </html>
